@@ -6,7 +6,7 @@
 DROP TABLE "addressbase_premium"."basiclandpropertyunit" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'basiclandpropertyunit' AND f_table_schema = 'addressbase_premium';
 
-CREATE TABLE "addressbase_premium"."basiclandpropertyunit" ( OGC_FID SERIAL, CONSTRAINT "basiclandpropertyunit_pk" PRIMARY KEY (OGC_FID) );
+CREATE TABLE "addressbase_premium"."basiclandpropertyunit" ( ogc_fid SERIAL, CONSTRAINT "basiclandpropertyunit_pk" PRIMARY KEY (ogc_fid) );
 SELECT AddGeometryColumn('addressbase_premium','basiclandpropertyunit','wkb_geometry',27700,'POINT',2);
 ALTER TABLE "addressbase_premium"."basiclandpropertyunit" ADD COLUMN "uprn" FLOAT8;
 ALTER TABLE "addressbase_premium"."basiclandpropertyunit" ADD COLUMN "logicalstatus" INTEGER;
@@ -26,7 +26,7 @@ ALTER TABLE "addressbase_premium"."basiclandpropertyunit" ADD COLUMN "entrydate"
 ALTER TABLE "addressbase_premium"."basiclandpropertyunit" ADD COLUMN "lastupdatedate" VARCHAR;
 
 DROP TABLE "addressbase_premium"."classification" CASCADE;
-CREATE TABLE "addressbase_premium"."classification" (    OGC_FID SERIAL,    CONSTRAINT "classification_pk" PRIMARY KEY (OGC_FID) );
+CREATE TABLE "addressbase_premium"."classification" (    ogc_fid SERIAL,    CONSTRAINT "classification_pk" PRIMARY KEY (ogc_fid) );
 ALTER TABLE "addressbase_premium"."classification" ADD COLUMN "uprn" FLOAT8;
 ALTER TABLE "addressbase_premium"."classification" ADD COLUMN "classkey" VARCHAR;
 ALTER TABLE "addressbase_premium"."classification" ADD COLUMN "classificationcode" VARCHAR;
@@ -39,7 +39,7 @@ ALTER TABLE "addressbase_premium"."classification" ADD COLUMN "enddate" VARCHAR(
 
 DROP TABLE "addressbase_premium"."deliverypointaddress" CASCADE;
 
-CREATE TABLE "addressbase_premium"."deliverypointaddress" (    OGC_FID SERIAL,    CONSTRAINT "deliverypointaddress_pk" PRIMARY KEY (OGC_FID) );
+CREATE TABLE "addressbase_premium"."deliverypointaddress" (    ogc_fid SERIAL,    CONSTRAINT "deliverypointaddress_pk" PRIMARY KEY (ogc_fid) );
 ALTER TABLE "addressbase_premium"."deliverypointaddress" ADD COLUMN "uprn" FLOAT8;
 ALTER TABLE "addressbase_premium"."deliverypointaddress" ADD COLUMN "udprn" INTEGER;
 ALTER TABLE "addressbase_premium"."deliverypointaddress" ADD COLUMN "organisationname" VARCHAR;
@@ -68,7 +68,7 @@ ALTER TABLE "addressbase_premium"."deliverypointaddress" ADD COLUMN "lastupdated
 
 DROP TABLE "addressbase_premium"."landpropertyidentifier" CASCADE;
 
-CREATE TABLE "addressbase_premium"."landpropertyidentifier" (    OGC_FID SERIAL,    CONSTRAINT "landpropertyidentifier_pk" PRIMARY KEY (OGC_FID) );
+CREATE TABLE "addressbase_premium"."landpropertyidentifier" (   ogc_fid SERIAL,    CONSTRAINT "landpropertyidentifier_pk" PRIMARY KEY (ogc_fid) );
 ALTER TABLE "addressbase_premium"."landpropertyidentifier" ADD COLUMN "uprn" FLOAT8;
 ALTER TABLE "addressbase_premium"."landpropertyidentifier" ADD COLUMN "lpikey" VARCHAR;
 ALTER TABLE "addressbase_premium"."landpropertyidentifier" ADD COLUMN "logicalstatus" INTEGER;
@@ -93,7 +93,7 @@ ALTER TABLE "addressbase_premium"."landpropertyidentifier" ADD COLUMN "enddate" 
 
 DROP TABLE "addressbase_premium"."organisation" CASCADE;
 
-CREATE TABLE "addressbase_premium"."organisation" (    OGC_FID SERIAL,    CONSTRAINT "organisation_pk" PRIMARY KEY (OGC_FID) );
+CREATE TABLE "addressbase_premium"."organisation" (    ogc_fid SERIAL,    CONSTRAINT "organisation_pk" PRIMARY KEY (ogc_fid) );
 ALTER TABLE "addressbase_premium"."organisation" ADD COLUMN "uprn" FLOAT8;
 ALTER TABLE "addressbase_premium"."organisation" ADD COLUMN "orgkey" VARCHAR;
 ALTER TABLE "addressbase_premium"."organisation" ADD COLUMN "organisation" VARCHAR;
@@ -104,7 +104,7 @@ ALTER TABLE "addressbase_premium"."organisation" ADD COLUMN "enddate" VARCHAR(10
 
 DROP TABLE "addressbase_premium"."applicationcrossreference" CASCADE;
 
-CREATE TABLE "addressbase_premium"."applicationcrossreference" (    OGC_FID SERIAL,    CONSTRAINT "applicationcrossreference_pk" PRIMARY KEY (OGC_FID) );
+CREATE TABLE "addressbase_premium"."applicationcrossreference" (   ogc_fid SERIAL,    CONSTRAINT "applicationcrossreference_pk" PRIMARY KEY (ogc_fid) );
 ALTER TABLE "addressbase_premium"."applicationcrossreference" ADD COLUMN "uprn" FLOAT8;
 ALTER TABLE "addressbase_premium"."applicationcrossreference" ADD COLUMN "xrefkey" VARCHAR;
 ALTER TABLE "addressbase_premium"."applicationcrossreference" ADD COLUMN "crossreference" VARCHAR;
@@ -118,7 +118,7 @@ ALTER TABLE "addressbase_premium"."applicationcrossreference" ADD COLUMN "enddat
 DROP TABLE "addressbase_premium"."street" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'street' AND f_table_schema = 'addressbase_premium';
 
-CREATE TABLE "addressbase_premium"."street" ( OGC_FID SERIAL, CONSTRAINT "street_pk" PRIMARY KEY (OGC_FID) );
+CREATE TABLE "addressbase_premium"."street" ( ogc_fid SERIAL, CONSTRAINT "street_pk" PRIMARY KEY (ogc_fid) );
 SELECT AddGeometryColumn('addressbase_premium','street','wkb_geometry',27700,'MULTIPOINT',2);
 ALTER TABLE "addressbase_premium"."street" ADD COLUMN "usrn" INTEGER;
 ALTER TABLE "addressbase_premium"."street" ADD COLUMN "recordtype" INTEGER;
@@ -135,7 +135,7 @@ ALTER TABLE "addressbase_premium"."street" ADD COLUMN "lastupdatedate" VARCHAR;
 
 DROP TABLE "addressbase_premium"."streetdescriptiveidentifier" CASCADE;
 
-CREATE TABLE "addressbase_premium"."streetdescriptiveidentifier" (    OGC_FID SERIAL,    CONSTRAINT "streetdescriptiveidentifier_pk" PRIMARY KEY (OGC_FID) );
+CREATE TABLE "addressbase_premium"."streetdescriptiveidentifier" (    ogc_fid SERIAL,    CONSTRAINT "streetdescriptiveidentifier_pk" PRIMARY KEY (ogc_fid) );
 ALTER TABLE "addressbase_premium"."streetdescriptiveidentifier" ADD COLUMN "usrn" INTEGER;
 ALTER TABLE "addressbase_premium"."streetdescriptiveidentifier" ADD COLUMN "streetdescription" VARCHAR;
 ALTER TABLE "addressbase_premium"."streetdescriptiveidentifier" ADD COLUMN "locality" VARCHAR;
